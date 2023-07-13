@@ -27,6 +27,7 @@ export default function AddToCart({show, handleClose, produto, count, setCount, 
             <Modal.Footer className="d-flex flex-column ">
                 <button type="button" className="btn btn-outline-primary btn-lg btn-block w-100" onClick={handleClose}>
                     Continuar comprando
+                    setAddCart()
                 </button>
                 <button type="button" className="btn btn-primary btn-lg btn-block w-100" onClick={handleClose}>
                     Finalizar Pedido

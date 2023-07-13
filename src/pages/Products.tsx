@@ -24,7 +24,11 @@ export default function Products() {
     }
 
     if (productsLoading) {
-        return <p>Loading</p>
+        return <div className="d-flex justify-content-center align-items-center my-5">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
     }
 
     if (productsError) {
@@ -41,9 +45,9 @@ export default function Products() {
                 <main>
 
                     <div className="d-flex align-items-center justify-content-around ">
-                        <div className="d-flex justify-content-between p-3">
+                        <div className="d-flex flex-row align-items-center justify-content-between p-3">
 
-                            <Link to="/"><IoIosArrowBack/></Link>
+                            <Link to="/" className="fs-3"><IoIosArrowBack/></Link>
                             <span>{
                                 products[0].categoria
                             }</span>
@@ -52,7 +56,9 @@ export default function Products() {
                         <div className="p-3">
                             {
                             view ? <div className="border rounded d-flex align-items-center">
+                                
                                 <IoIosSearch onClick={handleSearchClick}/>
+                                
                                 <SearchBar products={products} setProduct={setProduct}/></div> : 
                             <IoIosSearch onClick={handleSearchClick}/>
                         } </div>
