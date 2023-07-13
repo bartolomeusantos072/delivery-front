@@ -1,8 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
-import { AddToCartInterface } from '../../../utils/Intefaces';
 import AddItems from '../AddItems';
 import Description from '../Description';
-import { SetStateAction } from 'react';
+import { AddToCartInterface } from '../../utils/Intefaces';
 
 
 export default function AddToCart({show, handleClose, produto, count, setCount, descriptionValue, setDescriptionValue} : AddToCartInterface) {
@@ -23,9 +22,7 @@ export default function AddToCart({show, handleClose, produto, count, setCount, 
             </Modal.Body>
             <hr/>
             <Modal.Body>
-                <Description view={show} placeholder={produto.descricao} descriptionValue={descriptionValue} setDescriptionValue={setDescriptionValue} setView={function (value: SetStateAction<boolean>): void {
-                    throw new Error('Function not implemented.');
-                } } />
+                <Description view={show} placeholder={produto.descricao} descriptionValue={descriptionValue} setDescriptionValue={setDescriptionValue} />
             </Modal.Body>
             <Modal.Footer className="d-flex flex-column ">
                 <button type="button" className="btn btn-outline-primary btn-lg btn-block w-100" onClick={handleClose}>

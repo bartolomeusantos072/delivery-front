@@ -3,9 +3,9 @@ import useProducts from "../hooks/api/useProducts";
 import {useEffect, useState} from "react";
 import {IoIosArrowBack, IoMdShare} from "react-icons/io";
 
-import Footer from "./components/Footer";
+import Footer from "../components/Footer";
 import formatCurrency from "../utils/formatCurrency";
-import Description from "./components/Description";
+import Description from "../components/Description";
 import { ProductInterface } from "../utils/Intefaces";
 
 export default function ProductDetails() {

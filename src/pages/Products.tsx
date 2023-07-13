@@ -2,10 +2,11 @@
 import {Link, useParams} from "react-router-dom";
 import useProducts from "../hooks/api/useProducts";
 import {useEffect, useState} from "react";
-import Product from "../components/Product";
+// import Product from "/components/Product";
 import {IoIosArrowBack, IoIosSearch} from "react-icons/io";
 import {ProductInterface} from "../utils/Intefaces";
-import SearchBar from "./components/SearchBar";
+import SearchBar from "../components/SearchBar";
+import Product from "../components/Product";
 
 
 export default function Products() {
@@ -16,7 +17,7 @@ export default function Products() {
 
     useEffect(() => {
         getProducts;
-    },[]);
+    });
     
     const handleSearchClick = () => {
         setView(!view)

@@ -1,8 +1,10 @@
 import {useState} from "react";
-import formatCurrency from "../../utils/formatCurrency";
+
 import AddToCart from "./Modal/AddToCart";
 import AddItems from "./AddItems";
-import { PreAddToCartInterface } from "../../utils/Intefaces";
+import { PreAddToCartInterface } from "../utils/Intefaces";
+import formatCurrency from "../utils/formatCurrency";
+
 
 
 export default function Footer({preco, produto, count, setCount, descriptionValue, setDescriptionValue}: PreAddToCartInterface) {

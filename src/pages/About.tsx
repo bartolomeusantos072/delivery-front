@@ -32,8 +32,8 @@ export default function About() {
         const set = new Set(pagamentoArr);
         const formaPagamento = [...set];
         return (
-            <div className="position-absolute  fixed-top top-0 start-0 border-0 w-25 vh-100 d-none d-lg-block bg-light" >
-                    <ul className="list-group border-0">
+            <div className="d-none d-lg-block bg-light fixed-top w-25 h-100" >
+                    <ul className="list-group list-group-flush">
                         <li className="list-group-item bg-light d-flex flex-column align-items-center">
 
                             <figure>
