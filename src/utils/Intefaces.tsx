@@ -22,12 +22,14 @@ export interface AddToCartInterface{
     setCount:React.Dispatch<React.SetStateAction<number>>
 }
 export interface CartItemInterface{
+    id:string,
     product:ProductInterface,
     count:number,
-    setCount:React.Dispatch<React.SetStateAction<number>>,
     descriptionValue: string,
 }
 export interface valueContextType {
+    count:number,
+    setCount:React.Dispatch < React.SetStateAction < number >>,
     categoriaId: number,
     setCategoriaId: React.Dispatch < React.SetStateAction < number >>
     view: boolean,
@@ -35,5 +37,5 @@ export interface valueContextType {
     descriptionValue: string,
     setDescriptionValue: React.Dispatch < React.SetStateAction < string >>,
     cartItems: CartItemInterface[]
-    setCartItems:React.Dispatch < React.SetStateAction < CartItemInterface[] >> | void,
+    setCartItems:React.Dispatch < React.SetStateAction < CartItemInterface[] >>,
 }

@@ -9,9 +9,11 @@ export const AppProvider = ({children}) => {
     const [categoriaId, setCategoriaId]=useState(0);
     const [descriptionValue, setDescriptionValue] = useState("");
     const [view, setView] = useState(false);
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
 
     const value: valueContextType = {
+        count,
+        setCount,
         categoriaId, setCategoriaId,
         view, setView,
         descriptionValue,
