@@ -13,8 +13,6 @@ export default function ProductDetails() {
 
     const location = useMatches();
     const [count, setCount] = useState(1);
-    const [view, setView] = useState(false);
-    const [descriptionValue, setDescriptionValue] = useState("");
     const categoria = location[0].params.ids ?. split("-")[0];
     const detail = Number(location[0].params.ids ?. split("-")[1]);
 
@@ -38,11 +36,11 @@ export default function ProductDetails() {
         }</p>
     }
 
-    const produto: ProductInterface = products.find((product : {
+    const product: ProductInterface = products.find((product : {
         id: number;
     }) => product.id === Number(detail));
-    if (produto) {
-        const preco = Number(produto.valor);
+    if (product) {
+        
         
         return <>
             <div className="d-flex align-items-center justify-content-around">
@@ -54,33 +52,25 @@ export default function ProductDetails() {
                     </span>
 
                 </div>
-                <Shared produto={produto}/>
+                <Shared product={product}/>
             </div>
             <hr/>
             <h4>{
-                produto.nome
+                product.nome
             }</h4>
             <h4 className="text-primary">
                 {
-                formatCurrency(preco)
+                formatCurrency(Number(product.valor))
             }</h4>
             <p className="fs-5 ">
                 {
-                produto.descricao
+                product.descricao
             }</p>
-            <Description view={view}
-                setView={setView}
-                placeholder={
-                    produto.descricao.split(" ")[0]
-                }
-                descriptionValue={descriptionValue}
-                setDescriptionValue={setDescriptionValue}/>
-            <Footer preco={preco}
-                produto={produto}
+            <Description placeholder={ product.descricao.split(" ")[0]} />
+            <Footer 
+                product={product}
                 count={count}
-                setCount={setCount}
-                descriptionValue={descriptionValue}
-                setDescriptionValue={setDescriptionValue}/>
+                setCount={setCount}/>
         </>
     }
     return null;

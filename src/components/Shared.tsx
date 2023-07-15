@@ -3,7 +3,7 @@ import { IoMdShare } from "react-icons/io";
 import ErrorPage from "../pages/ErroPage";
 import { ProductInterface } from "../utils/Intefaces";
 
-export default function Shared({produto}: {produto: ProductInterface}) {
+export default function Shared({product}: {product: ProductInterface}) {
     
     const [shareSuccess, setShareSuccess] = useState(false);
     const {
@@ -12,7 +12,7 @@ export default function Shared({produto}: {produto: ProductInterface}) {
         imagem,
         descricao,
         valor
-    } = produto;
+    } = product;
     const shareProduct = () => {
         navigator.share({
             title: `${categoria}`,

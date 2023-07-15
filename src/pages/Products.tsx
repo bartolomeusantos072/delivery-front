@@ -1,16 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import {Link, useParams} from "react-router-dom";
 import useProducts from "../hooks/api/useProducts";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 // import Product from "/components/Product";
 import {IoIosArrowBack, IoIosSearch} from "react-icons/io";
 import {ProductInterface} from "../utils/Intefaces";
 import SearchBar from "../components/SearchBar";
 import Product from "../components/Product";
-
+import { AppContext } from "../context/AppContext";
 
 export default function Products() {
     const {id} = useParams();
+    const {setCategoriaId}=useContext(AppContext);
+    
+    setCategoriaId(id);
+
     const {products, productsLoading, productsError, getProducts} = useProducts("" + id);
     const [product, setProduct]=useState<ProductInterface|null>();
     const [view, setView] = useState(false);
@@ -72,7 +76,7 @@ export default function Products() {
                         {
                             product ?  <Product product={product}/>:
                             products.map((product : ProductInterface) => {
-                            return <Product product={product}/>
+                            return <Product key={product.id} product={product}/>
                         })
                     } </div>
                 </main>

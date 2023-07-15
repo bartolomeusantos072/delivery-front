@@ -71,7 +71,7 @@ export default function About() {
                         </li>
                         <li className="list-group-item bg-light"> {
                                formaPagamento.map(e => {
-                                return <span className="fw-bold">
+                                return <span  className="fw-bold">
                                     {e+""}
                                 <br/>
                                 </span>

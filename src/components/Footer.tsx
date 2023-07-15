@@ -7,10 +7,9 @@ import formatCurrency from "../utils/formatCurrency";
 
 
 
-export default function Footer({preco, produto, count, setCount, descriptionValue, setDescriptionValue}: PreAddToCartInterface) {
-   
+export default function Footer({ product, count, setCount }: PreAddToCartInterface) {
     
-    const resultado = (preco)*count;
+    const resultado = (Number(product.valor))*count;
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -26,7 +25,7 @@ export default function Footer({preco, produto, count, setCount, descriptionValu
                 </h5>
             </button>
             
-            <AddToCart show={show} handleClose={handleClose} produto={produto} count={count} setCount={setCount} descriptionValue={descriptionValue} setDescriptionValue={setDescriptionValue} />
+            <AddToCart show={show} handleClose={handleClose} product={product} count={count} setCount={setCount} />
             </footer>
     
     );

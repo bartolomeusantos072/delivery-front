@@ -1,14 +1,13 @@
-import {ChangeEvent} from 'react';
+import {ChangeEvent, useContext} from 'react';
 import Form from 'react-bootstrap/Form';
+import { AppContext } from '../context/AppContext';
+import { valueContextType } from '../utils/Intefaces';
 
-export default function Description({view, setView, placeholder,descriptionValue, setDescriptionValue} : {
-    view : boolean,
-    setView: React.Dispatch<React.SetStateAction<boolean>>,
+export default function Description({ placeholder} : {
     placeholder : string,
-    descriptionValue: string,
-    setDescriptionValue: React.Dispatch<React.SetStateAction<string>>
 }) {
-    
+    const {view, setView, descriptionValue, setDescriptionValue}:valueContextType =useContext(AppContext);
+
   
     const handleDescription = (event : ChangeEvent<HTMLTextAreaElement>) => {
         event.preventDefault();

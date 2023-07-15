@@ -1,7 +1,8 @@
-import {useEffect} from "react";
+import { useEffect} from "react";
 import useCategories from "../hooks/api/useCategories";
 import Image from 'react-bootstrap/Image';
 import { Link } from "react-router-dom";
+
 
 export default function Categories() {
     const {categories, categoriesLoading, categoriesError, getCategories} = useCategories();
@@ -29,14 +30,17 @@ export default function Categories() {
 
 
     if (categories) {
+        
         return (
             <div className="d-flex flex-wrap">
                 {
-                categories.map((categorie : {
-                    id: number;
-                    Imagem: string;
-                    nome: string;
-                }) => {
+                    categories.map((categorie : {
+                        id: number;
+                        Imagem: string;
+                        nome: string;
+                    }) => {
+                  
+                        
                     return <Link to={`categorias/${categorie.id}/products`}><figure key={categorie.id} className=" figure-img img-fluid rounded m-4" style={{width: '200px', height: '200px'}}>
                         <Image className="bg-cover " src={
                                 categorie.Imagem

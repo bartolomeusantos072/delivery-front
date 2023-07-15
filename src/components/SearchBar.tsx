@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {ProductInterface} from "../../utils/Intefaces";
+import {ProductInterface} from "../utils/Intefaces";
 
 function SearchBar({products, setProduct}:{products: ProductInterface[], setProduct: (product: ProductInterface | null) => void }) {
 
@@ -14,7 +14,7 @@ function SearchBar({products, setProduct}:{products: ProductInterface[], setProd
        
 
         if (searchValue.trim() === '') {
-            setProduct(null); // Nenhum produto específico selecionado
+            setProduct(null);
           } else {
             const productSearch = products.filter((product) => {
               return (

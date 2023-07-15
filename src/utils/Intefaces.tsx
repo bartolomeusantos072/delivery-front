@@ -9,20 +9,31 @@ export interface ProductInterface {
 }
 
 export interface PreAddToCartInterface{
-    preco:number,
-    produto:ProductInterface,
+    product:ProductInterface,
     count:number,
     setCount:React.Dispatch<React.SetStateAction<number>>,
-    descriptionValue:string,
-    setDescriptionValue: React.Dispatch<React.SetStateAction<string>>,
 }
 
 export interface AddToCartInterface{
     show : boolean,
     handleClose : () => void,
-    produto : ProductInterface,
+    product : ProductInterface,
+    count:number,
+    setCount:React.Dispatch<React.SetStateAction<number>>
+}
+export interface CartItemInterface{
+    product:ProductInterface,
     count:number,
     setCount:React.Dispatch<React.SetStateAction<number>>,
-    descriptionValue:string,
-    setDescriptionValue: React.Dispatch<React.SetStateAction<string>>,
+    descriptionValue: string,
+}
+export interface valueContextType {
+    categoriaId: number,
+    setCategoriaId: React.Dispatch < React.SetStateAction < number >>
+    view: boolean,
+    setView: React.Dispatch < React.SetStateAction < boolean >>, 
+    descriptionValue: string,
+    setDescriptionValue: React.Dispatch < React.SetStateAction < string >>,
+    cartItems: CartItemInterface[]
+    setCartItems:React.Dispatch < React.SetStateAction < CartItemInterface[] >> | void,
 }
