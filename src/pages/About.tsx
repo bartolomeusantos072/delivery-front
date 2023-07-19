@@ -10,13 +10,13 @@ export default function About() {
     const {formaPagamento, setFormaPagamento} = useContext(AppContext);
 
     useEffect(() => {
-        getEmpresa;
+        getEmpresa();
         if (empresa) {
             const pagamentoArr = empresa.map((e) => e.forma);
             const set = new Set(pagamentoArr);
             setFormaPagamento([...set]);
           }
-    }, [empresa, getEmpresa, setFormaPagamento]);
+    }, [setFormaPagamento]);
 
     if (empresaLoading) {
         return <div className="d-flex justify-content-center align-items-center my-5">

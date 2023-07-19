@@ -13,6 +13,21 @@ export default function ProceedPay({show, handleClose} : {
         setSelectedPayment(event.target.value);
       };
     const message = "Escolher forma de pagamento";
+    let content;
+
+    switch (selectedPayment) {
+      case "pix":
+        content = <PixContent />;
+        break;
+      case "cartao":
+        content = <CartaoContent />;
+        break;
+      case "dinheiro":
+        content = <DinheiroContent />;
+        break;
+      default:
+        content = null;
+    }
 
     return <Modal show={show}
         onHide={handleClose}>
@@ -36,7 +51,8 @@ export default function ProceedPay({show, handleClose} : {
         </Modal.Body>
         <hr/>
             <Modal.Footer className="d-flex flex-column ">
-            <p>Forma de pagamento selecionada: {selectedPayment}</p>
+            {content}
+
             </Modal.Footer>
         </Modal>
 }
