@@ -12,12 +12,13 @@ export const AppProvider = ({children}) => {
   const [count, setCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
   const [cookies, setCookie] = useCookies(['cartItems']);
+  const [formaPagamento,setFormaPagamento]=useState([]);
 
   useEffect(() => {
     const savedCartItems = cookies.cartItems || [];
     setCartItems(savedCartItems);
   }, []);
-
+  
   const expirationDate = new Date();
   expirationDate.setHours(expirationDate.getHours() + 1);
 
@@ -52,7 +53,9 @@ export const AppProvider = ({children}) => {
         setDescriptionValue,
         updateItemCount,
         cartItems,
-        setCartItems
+        setCartItems,
+        formaPagamento,
+        setFormaPagamento
     }
     return <AppContext.Provider value={value}>
         {children} </AppContext.Provider>

@@ -2,7 +2,7 @@ import useAsync from '../useAsync.js';
 
 import * as categoriesApi from "../../services/categoriesApi.js";
 
-export default function useEmpresa(){
+export default function useCategories(){
     const {
         data: categories,
         loading: categoriesLoading,

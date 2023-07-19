@@ -39,4 +39,6 @@ export interface valueContextType {
     setDescriptionValue: React.Dispatch < React.SetStateAction < string >>,
     cartItems: CartItemInterface[]
     setCartItems:React.Dispatch < React.SetStateAction < CartItemInterface[] >>,
+    formaPagamento:string[],
+    setFormaPagamento:React.Dispatch < React.SetStateAction < string[] >>,
 }

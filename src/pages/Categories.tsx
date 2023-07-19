@@ -10,7 +10,6 @@ export default function Categories() {
 
     useEffect(() => {
         getCategories;
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (categoriesLoading) {
@@ -38,10 +37,10 @@ export default function Categories() {
                         id: number;
                         Imagem: string;
                         nome: string;
-                    }) => {
+                    },index:{index:number}) => {
                   
                         
-                    return <Link to={`categorias/${categorie.id}/products`}><figure key={categorie.id} className=" figure-img img-fluid rounded m-4" style={{width: '200px', height: '200px'}}>
+                    return <Link to={`categorias/${categorie.id}/products`}><figure key={index} className=" figure-img img-fluid rounded m-4" style={{width: '200px', height: '200px'}}>
                         <Image className="bg-cover " src={
                                 categorie.Imagem
                             }
