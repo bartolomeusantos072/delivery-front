@@ -7,23 +7,9 @@ export default function AddItems({id, count, setCount} : {
     count : number,
     setCount? : React.Dispatch < React.SetStateAction < number >>
 }) {
-    const {cartItems, setCartItems} = useContext(AppContext);
+    const {cartItems, setCartItems,updateItemCount} = useContext(AppContext);
 
-    const updateItemCount = (itemId, newCount) => {
-        setCartItems((items) => {
-          const updatedItems = items.map((item) => {
-            if (item.id === itemId) {
-              if (newCount === 0) {
-                return null;
-              }
-              return { ...item, count: newCount };
-            }
-            return item;
-          });
-      
-          return updatedItems.filter((item) => item !== null); 
-        });
-      };
+    
 
     const handleDecrement = () => {
         if (id) {
@@ -55,7 +41,7 @@ export default function AddItems({id, count, setCount} : {
         <button type="button" className="btn btn-link"
             onClick={handleIncrement}>
             <h4>
-                <IoIosAdd/>
+                <IoIosAdd  />
             </h4>
         </button>
     </div>

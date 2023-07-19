@@ -26,6 +26,7 @@ export interface CartItemInterface{
     product:ProductInterface,
     count:number,
     descriptionValue: string,
+    [Symbol.iterator](): Iterator<CartItemInterface>;
 }
 export interface valueContextType {
     count:number,

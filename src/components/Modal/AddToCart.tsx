@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 export default function AddToCart({show, handleClose, product, count, setCount} : AddToCartInterface) {
-    const {categoriaId,cartItems, setCartItems, descriptionValue, setDescriptionValue} = useContext(AppContext);
+    const {categoriaId, setCartItems, descriptionValue, setDescriptionValue} = useContext(AppContext);
     
     const history = useNavigate();
     const handleAddCart = () => {

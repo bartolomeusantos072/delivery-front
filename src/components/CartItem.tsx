@@ -2,13 +2,15 @@ import { IoMdTrash } from "react-icons/io";
 import AddItems from "../components/AddItems";
 import { CartItemInterface } from "../utils/Intefaces";
 import formatCurrency from "../utils/formatCurrency";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
 export default function CartItem({item}:{item: CartItemInterface}){
     
     const {id, product, count, descriptionValue} = item;
     const {nome, descricao, valor, imagem, categoria_id} = product;
     
-  
+    const{updateItemCount} = useContext(AppContext);
   
     return <div className="card rounded-3 mb-4">
     <div className="card-body p-4">

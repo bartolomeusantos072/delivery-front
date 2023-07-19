@@ -46,7 +46,7 @@ export default function ProductDetails() {
             <div className="d-flex align-items-center justify-content-around">
                 <div className="d-flex flex-row align-items-center justify-content-between p-3">
 
-                    <Link to="/" className="fs-3"><IoIosArrowBack/></Link>
+                    <Link to={`/categorias/${categoria}/products`} className="fs-3"><IoIosArrowBack/></Link>
                     <span>
                         Detalhes do Produto
                     </span>

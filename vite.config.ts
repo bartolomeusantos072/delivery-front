@@ -14,13 +14,16 @@ export default defineConfig(({ mode }) => {
   }, {});
 
   return {
-    plugins: [react(), sassPlugin()], 
+    plugins: [react(), sassPlugin()],
     define: envParsed,
     resolve: {
       alias: {
-        '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'), 
+        '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
         // Adicionar o alias para o Bootstrap
       },
+    }, 
+    server: {
+      host: '0.0.0.0',
     },
   };
 });
